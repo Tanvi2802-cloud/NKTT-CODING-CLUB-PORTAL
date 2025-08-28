@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NKTT Coding Club</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="navbar container">
+      <div class="logo">NKTT <span>Coding Club</span></div>
+      <input id="nav-toggle" type="checkbox" />
+      <label class="burger" for="nav-toggle"><span></span></label>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+
+        <li class="dropdown">
+          <a href="#teams">Teams ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#teams" onclick="showTeam('frontend')">Frontend Team</a></li>
+            <li class="dropdown-sub">
+              <a href="#teams">Backend Team ➤</a>
+              <ul class="dropdown-submenu">
+                <li><a href="#teams" onclick="showTeam('application')">Application Team</a></li>
+                <li><a href="#teams" onclick="showTeam('database')">Database Team</a></li>
+              </ul>
+            </li>
+            <li><a href="#teams" onclick="showTeam('aiml')">AI/ML Team</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#attendance">Attendance</a></li>
+      </ul>
+
+      <button class="btn admin" onclick="openLogin()">Admin</button>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <h1><span>Welcome</span> to NKTT Coding Club</h1>
+      <p>Explore • Learn • Build — <strong>Learning by Doing</strong> 🚀</p>
+      <a href="#projects" class="btn cta">See Projects</a>
+    </div>
+    <!-- decorative code rain -->
+    <div class="matrix"></div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section container">
+    <h2>About NKTT Coding Club</h2>
+    <p>
+      NKTT Coding Club is a student-driven community that brings together curious minds passionate about
+      programming, problem-solving, and innovation. Our aim is to create a collaborative space where students
+      can learn, build, and grow together through coding challenges, workshops, and real-world projects.
+    </p>
+    <p>
+      From beginners taking their first steps in coding to advanced learners exploring new technologies,
+      the club provides opportunities for everyone. We focus on enhancing technical skills, encouraging teamwork,
+      and preparing students for hackathons, competitions, and career opportunities in the tech industry.
+    </p>
+    <p>
+      At NKTT Coding Club, we believe in “Learning by Doing” — because the best way to grow as a coder is to code,
+      collaborate, and create! 🚀
+    </p>
+  </section>
+
+  <!-- ===== PROJECTS SHOWCASE ===== -->
+  <section id="projects" class="section container">
+    <h2>Projects Showcase</h2>
+    <div class="grid projects">
+      <article class="card">
+        <h3>Weather Web Project</h3>
+        <p>Real-time weather dashboard with city search, 5-day forecast, and responsive UI.</p>
+        <span class="tag">Web</span>
+      </article>
+      <article class="card">
+        <h3>Amazon Clone</h3>
+        <p>E-commerce clone with product listing, cart, and checkout flow simulation.</p>
+        <span class="tag">Frontend • UX</span>
+      </article>
+      <!-- Add more project cards easily -->
+    </div>
+  </section>
+
+  <!-- ===== TEAMS (dynamic list) ===== -->
+  <section id="teams" class="section container">
+    <h2>Teams & Members</h2>
+    <p class="muted">Pick a team from the “Teams” menu to display its members here.</p>
+    <div id="team-members" class="team-box"></div>
+  </section>
+
+  <!-- ===== EVENTS ===== -->
+  <section id="events" class="section container">
+    <h2>Upcoming Events</h2>
+    <div class="grid events">
+      <article class="card">
+        <h3>Intro to Git & GitHub</h3>
+        <p>Version control workshop for beginners.</p>
+        <p class="muted">Sep 14 • Lab 204</p>
+      </article>
+      <article class="card">
+        <h3>24-Hour Hackathon</h3>
+        <p>Build, ship, and present a prototype with your team.</p>
+        <p class="muted">Oct 05–06 • Auditorium</p>
+      </article>
+      <article class="card">
+        <h3>AI/ML Study Jam</h3>
+        <p>Hands-on session: data prep to basic models.</p>
+        <p class="muted">Oct 19 • Lab 101</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="section container">
+    <h2>FAQ</h2>
+    <div class="accordion" id="faqBox">
+      <!-- Paste of your 20 Q&As -->
+      <div class="item"><button class="q">1. What is NKT Coding Club?</button><div class="a">NKT Coding Club is a student-driven committee of NKT College dedicated to handling and developing tech-related initiatives, projects, and innovations for the college.</div></div>
+      <div class="item"><button class="q">2. Who can join the NKT Coding Club?</button><div class="a">Any student of NKT College with an interest in coding, technology, or digital innovation can apply to join.</div></div>
+      <div class="item"><button class="q">3. What kind of projects does the club work on?</button><div class="a">The club develops websites, applications, AI-based tools, and digital solutions that enhance college operations and student experiences.</div></div>
+      <div class="item"><button class="q">4. Is NKT Coding Club only for IT students?</button><div class="a">No. While IT students form the core, the club is open to anyone passionate about technology, regardless of their academic department.</div></div>
+      <div class="item"><button class="q">5. How does the club benefit the college?</button><div class="a">By creating cost-effective, customized tech solutions, conducting workshops, and boosting the digital presence of the college.</div></div>
+      <div class="item"><button class="q">6. Do members get certificates or recognition?</button><div class="a">Yes. Active contributors receive official recognition, certificates, and opportunities to showcase their work.</div></div>
+      <div class="item"><button class="q">7. Does the club organize workshops or events?</button><div class="a">Yes. We conduct coding workshops, hackathons, tech fests, and skill-development events regularly.</div></div>
+      <div class="item"><button class="q">8. How can I collaborate with NKT Coding Club?</button><div class="a">You can reach out via our official contact form or email to propose collaborations, ideas, or technical requirements.</div></div>
+      <div class="item"><button class="q">9. Are there any prerequisites to join the club?</button><div class="a">Basic understanding of technology or a willingness to learn is enough. We provide training to motivated members.</div></div>
+      <div class="item"><button class="q">10. Is there a membership fee?</button><div class="a">No. Joining the club is free for all NKT College students.</div></div>
+      <div class="item"><button class="q">11. How can I contribute an idea or problem statement?</button><div class="a">Submit your idea through our website or contact any core member of the club.</div></div>
+      <div class="item"><button class="q">12. Does the club provide mentorship or learning sessions?</button><div class="a">Yes. We provide guided sessions, mentorship, and hands-on project experience.</div></div>
+      <div class="item"><button class="q">13. Can non-coding enthusiasts participate in any way?</button><div class="a">Absolutely. We welcome designers, content creators, and strategists to contribute in their own fields.</div></div>
+      <div class="item"><button class="q">14. What technologies does the club primarily work with?</button><div class="a">We work with web technologies, artificial intelligence, cloud computing, and emerging frameworks relevant to industry standards.</div></div>
+      <div class="item"><button class="q">15. Who leads the NKT Coding Club?</button><div class="a">The club is led by a team of selected student leaders under the guidance of the IT department and faculty advisors.</div></div>
+      <div class="item"><button class="q">16. How can I stay updated about the club’s activities?</button><div class="a">Follow our official social media pages or subscribe to our newsletter for regular updates.</div></div>
+      <div class="item"><button class="q">17. Will the projects be used in the college officially?</button><div class="a">Yes. Approved projects are implemented officially for student and faculty use.</div></div>
+      <div class="item"><button class="q">18. How does the club handle AI integration in projects?</button><div class="a">We experiment with AI tools to automate, enhance, and modernize college processes where applicable.</div></div>
+      <div class="item"><button class="q">19. What is the selection process for being a core member?</button><div class="a">Core members are chosen based on their technical skills, creativity, teamwork, and consistent contributions.</div></div>
+      <div class="item"><button class="q">20. Who can contact the club for technical support or project requests?</button><div class="a">Any faculty, department, or committee of NKT College can directly approach the club via official communication channels.</div></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section container">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:nkttcodingclub@gmail.com">nkttcodingclub@gmail.com</a></p>
+  </section>
+
+  <!-- ===== ATTENDANCE ===== -->
+  <section id="attendance" class="section container">
+    <h2>Attendance</h2>
+    <p class="muted">Daily marking only; lifetime records are stored (students can’t view history).</p>
+    <div class="att-box">
+      <input id="studentName" type="text" placeholder="Enter your full name" />
+      <button class="btn" onclick="markAttendance()">Mark Today's Attendance</button>
+    </div>
+    <p id="attendance-msg" class="status"></p>
+  </section>
+
+  <!-- ===== ADMIN DASHBOARD (hidden) ===== -->
+  <section id="dashboard" class="section container" style="display:none;">
+    <h2>Admin Dashboard</h2>
+    <div class="dash-grid">
+      <div class="card">
+        <h3>Attendance Records</h3>
+        <ul id="attendance-list" class="list"></ul>
+      </div>
+      <div class="card">
+        <h3>Stats</h3>
+        <p id="stat-total">Total records: 0</p>
+        <p id="stat-today">Today: 0</p>
+        <button class="btn outline" onclick="clearAllAttendance()">Clear All (admin)</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> NKTT Coding Club • Built by students
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
