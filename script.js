@@ -8,33 +8,78 @@ $("#year").textContent = new Date().getFullYear();
 
 /* ===== TEAMS DATA ===== */
 const teams = {
-  frontend: ["Alice", "Rohit", "Meera", "Tanvi", "Arnav"],
-  application: ["Neha", "Vikas", "Arjun", "Fatima"],
-  database: ["Ravi", "Aditi", "Manoj", "Sagar"],
-  aiml: ["Raj", "Simran", "Kabir", "Ishita"]
+  frontend: {
+    head: "Sunny",
+    members: [
+      "Tanvi Kumbhar", "Gopal Shinde", "Radhika Narayankar", "Ruchi Jain",
+      "Zikra Shaikh","Shubham Buranpure","Raj Kshatriya","HInal Diwamni"
+    ]
+  },
+
+  backend: {
+    head: "Shashikant Mane",
+    members: [
+      "Siraj Khan","Nikhil Singh","Ketan Kolapkar","Ritesh Bhosale",
+      "Ujawal Guru","Aditya Patil","Bhoomi Jadhav","Dhanashree Gawade",
+      "Khushi Singh","Narayani Gupta","Aryan Prajapati"
+    ]
+  },
+
+  application: {
+    head: "Shashikant Mane",
+    members: ["Siraj Khan","Nikhil Singh","Ketan Kolapkar","Ritesh Bhosale","Ujawal Guru","Aditya Patil"]
+  },
+
+  database: {
+    head: "Shashikant Mane",
+    members: ["Bhoomi Jadhav","Dhanashree Gawade","Khushi Singh","Narayani Gupta","Aryan Prajapati"]
+  },
+
+  aiml: {   // ✅ use a clean key internally
+    head: "Yash Mane",
+    members: ["Akshada Badgujar","Aatif Ali","Dhanshree Pawar","Drushti Shelke","Sakshi Yadav"]
+  }
 };
 
+/* ===== SHOW TEAM ===== */
 function showTeam(teamKey){
-  const box = $("#team-members");
-  if(!teams[teamKey]){ box.innerHTML = "<p class='muted'>Team not found.</p>"; return; }
-  const titleMap = {frontend:"Frontend", application:"Application", database:"Database", aiml:"AI/ML"};
+  const box = document.getElementById("team-members");
+  if(!teams[teamKey]){ 
+    box.innerHTML = "<p class='muted'>Team not found.</p>"; 
+    return; 
+  }
+
+  const titleMap = {
+    frontend: "Frontend",
+    backend: "Backend",
+    application: "Application",
+    database: "Database",
+    aiml: "AI/ML"
+  };
+
   const title = titleMap[teamKey] || teamKey;
-  const list = teams[teamKey].map(m => `<li>${m}</li>`).join("");
+
+  // highlight head with a CSS class
+  const head = `
+    <p class="team-head">
+      👑 <strong>${teams[teamKey].head}</strong>
+    </p>
+  `;
+
+  const members = teams[teamKey].members.map(m => `<li>${m}</li>`).join("");
+
   box.innerHTML = `
     <div class="card">
       <h3>${title} Team</h3>
-      <ul class="team-list">${list}</ul>
+      ${head}
+      <ul class="team-list">${members}</ul>
     </div>`;
+  
   location.hash = "#teams";
 }
 
-/* ===== FAQ ACCORDION ===== */
-document.addEventListener("click", (e)=>{
-  if(e.target.classList.contains("q")){
-    const item = e.target.closest(".item");
-    item.classList.toggle("open");
-  }
-});
+
+
 
 /* ===== ATTENDANCE (Lifetime via localStorage) ===== */
 function loadAttendance(){
