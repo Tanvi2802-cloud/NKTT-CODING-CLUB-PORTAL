@@ -113,6 +113,14 @@ header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8p
 .team-list li{break-inside:avoid; margin:6px 0; list-style:"•  "; padding-left:6px}
 @media (max-width:600px){ .team-list{columns:1} }
 
+/* Highlight Team Head */
+.team-head {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff9800;   /* orange highlight */
+  margin-bottom: 10px;
+}
+
 /* ===== FAQ ===== */
 .accordion .item{border:1px solid rgba(148,163,184,.15); border-radius:12px; margin:10px 0; overflow:hidden; background:var(--panel)}
 .accordion .q{
@@ -158,5 +166,7 @@ header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8p
 
 /* ===== Footer ===== */
 footer{padding:26px 0; color:var(--muted); text-align:center; border-top:1px solid rgba(148,163,184,.15); margin-top:60px}
+
+
 
 
