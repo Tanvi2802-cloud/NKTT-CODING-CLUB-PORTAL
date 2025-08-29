@@ -137,5 +137,26 @@ header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8p
 .admin{margin-left:14px}
 @media (max-width:900px){ .dash-grid{grid-template-columns:1fr} }
 
+/* ===== Experience ===== */
+.experiences {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.experiences .card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===== Mentors ===== */
+.mentors {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  text-align: center;
+}
+.mentors .card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
 /* ===== Footer ===== */
 footer{padding:26px 0; color:var(--muted); text-align:center; border-top:1px solid rgba(148,163,184,.15); margin-top:60px}
+
+
