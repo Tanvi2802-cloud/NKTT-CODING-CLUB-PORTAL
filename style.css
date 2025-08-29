@@ -167,6 +167,20 @@ header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(8p
 /* ===== Footer ===== */
 footer{padding:26px 0; color:var(--muted); text-align:center; border-top:1px solid rgba(148,163,184,.15); margin-top:60px}
 
+/* ===== FAQ Accordion ===== */
+.accordion .a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion .item.open .a {
+  max-height: 500px; /* enough to fit long answers */
+  padding: 0 16px 14px;
+}
+
+
+
 
 
 
