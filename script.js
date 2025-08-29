@@ -164,3 +164,19 @@ window.showTeam = showTeam;
 window.markAttendance = markAttendance;
 window.openLogin = openLogin;
 window.clearAllAttendance = clearAllAttendance;
+
+/* ===== FAQ Toggle ===== */
+document.querySelectorAll(".accordion .q").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const item = btn.parentElement;
+
+    // Close others if you want only one open at a time
+    document.querySelectorAll(".accordion .item").forEach(el => {
+      if (el !== item) el.classList.remove("open");
+    });
+
+    // Toggle current
+    item.classList.toggle("open");
+  });
+});
+
